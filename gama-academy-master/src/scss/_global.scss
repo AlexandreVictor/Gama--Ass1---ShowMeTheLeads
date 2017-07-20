@@ -1,0 +1,165 @@
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background-color: black;
+
+  font-family: 'Lato', sans-serif;
+  color: white;
+
+  overflow-x: hidden;
+}
+
+#SoonText {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 300;
+  font-size: 2.0rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+#MainContainer {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+
+  position: relative;
+
+  @media (min-width: 993px)
+  {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  background-image: url('../images/woman-background-2.png');
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: contain;
+  background-position: left;
+  background-origin: content-box;
+
+  color: $main-text-color;
+
+  #MainOverlay {
+    width: 100%;
+    height: 100%;
+
+    mix-blend-mode: multiply;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    animation: colorchange 10s infinite;
+    -webkit-animation: colorchange 10s infinite;
+    @keyframes colorchange
+    {
+      0%   {background: transparent;}
+      50% {background: $gama-color;}
+      100%   {background: transparent;}
+
+    }
+  }
+
+  #MainDarkOverlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+
+    @media (min-width: 993px)
+    {
+      background-color: transparent;
+    }
+  }
+
+  #MainContent {
+    width: 80%;
+    height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 10%;
+    text-align: center;
+
+    h2 {
+      font-family: 'Dosis', sans-serif;
+      font-weight: 300;
+      font-size: 2.0rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: #969696;
+      text-shadow: 1px 1px 12px black;
+    }
+
+    @media (min-width: 993px)
+    {
+      width: 50%;
+      left: 50%;
+      text-align: left;
+      h2 {
+        margin-bottom: 10px;
+        font-size: 2.5rem;
+      }
+    }
+
+    #MainOptions {
+      display: flex;
+      justify-content: center;
+
+      @media (min-width: 993px)
+      {
+        justify-content: flex-start;
+      }
+
+      #MainButtonMore {
+        width: auto;
+
+        margin-top: 10px;
+
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        background-color: $gama-color;
+        border-radius: 32px;
+        border: 1px solid $gama-color;
+
+        font-family: 'Dosis', sans-serif;
+        letter-spacing: 2px;
+        font-size: 12px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+
+        @media (min-width: 993px)
+        {
+          background-color: transparent;
+          border: 1px solid $gama-color;
+          color: $gama-color;
+
+          &:hover {
+            background-color: $gama-color;
+            border: 1px solid $gama-color;
+
+            color: white;
+          }
+        }
+
+
+        #MainButtonIcon {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
